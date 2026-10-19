@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Global Meetings Data Pulse | Meridian BioPharma Executive Newsletter</title>
+  <style>
+    :root {
+      --navy: #0f172a;
+      --slate: #1e293b;
+      --muted: #64748b;
+      --light-bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --teal: #0d9488;
+      --teal-light: #ccfbf1;
+      --cyan: #06b6d4;
+      --red: #e11d48;
+      --red-light: #ffe4e6;
+      --amber: #d97706;
+      --amber-light: #fef3c7;
+      --green: #10b981;
+      --green-light: #d1fae5;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: #e2e8f0;
+      color: var(--slate);
+      line-height: 1.5;
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .newsletter-container {
+      width: 100%;
+      max-width: 960px;
+      background: #ffffff;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    /* Masthead */
+    .masthead {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 32px 36px 24px 36px;
+      border-bottom: 4px solid var(--teal);
+    }
+
+    .masthead-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      font-weight: 700;
+    }
+
+    .masthead-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
+
+    .masthead-subtitle {
+      font-size: 1rem;
+      color: #94a3b8;
+      font-weight: 400;
+    }
+
+    .synthetic-badge {
+      display: inline-block;
+      margin-top: 14px;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: #fcd34d;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    /* Metric Bar */
+    .metric-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--light-bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .metric-cell {
+      padding: 16px 20px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .metric-cell:last-child {
+      border-right: none;
+    }
+
+    .metric-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .metric-value {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.1;
+    }
+
+    .metric-value.alert {
+      color: var(--red);
+    }
+
+    .metric-value.teal {
+      color: var(--teal);
+    }
+
+    .metric-sub {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* Main Content Grid */
+    .newsletter-body {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 28px;
+      padding: 32px 36px;
+    }
+
+    /* Left Column */
+    .article {
+      margin-bottom: 24px;
+    }
+
+    .article-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--teal);
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    .article-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .article-text {
+      font-size: 0.88rem;
+      color: #334155;
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+
+    .quote-card {
+      background: #f1f5f9;
+      border-left: 4px solid var(--teal);
+      padding: 14px 18px;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--slate);
+      margin: 14px 0;
+    }
+
+    .quote-author {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 0.78rem;
+      color: var(--navy);
+      margin-top: 6px;
+      display: block;
+    }
+
+    /* Right Column / Sidebar */
+    .sidebar-widget {
+      background: var(--light-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .widget-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--navy);
+      border-bottom: 2px solid var(--teal);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 0.82rem;
+      color: #334155;
+    }
+
+    .check-icon {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      background: var(--teal);
+      color: white;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .warning-badge {
+      background: var(--red-light);
+      border: 1px solid rgba(225, 29, 72, 0.3);
+      color: var(--red);
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-top: 14px;
+    }
+
+    /* Footer */
+    .newsletter-footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 20px 36px;
+      font-size: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #334155;
+    }
+
+    .footer-links a {
+      color: var(--cyan);
+      text-decoration: none;
+      margin-left: 14px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        padding: 0;
+        background: white;
+      }
+      .newsletter-container {
+        box-shadow: none;
+        border: none;
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .metric-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .newsletter-body {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="newsletter-container">
+    <!-- Header -->
+    <header class="masthead">
+      <div class="masthead-top">
+        <span>Meridian BioPharma Global Operations</span>
+        <span>Vol. 4 • Issue 9 | September 2026</span>
+      </div>
+      <h1 class="masthead-title">THE DATA PULSE</h1>
+      <p class="masthead-subtitle">Monthly Governance, Spend Transparency &amp; Operational Excellence</p>
+      <div class="synthetic-badge">[SYNTHETIC SIMULATION FOR MERIDIAN BIOPHARMA DEMO PURPOSES ONLY]</div>
+    </header>
+
+    <!-- Metrics Ribbon -->
+    <div class="metric-strip">
+      <div class="metric-cell">
+        <div class="metric-label">Portfolio Accuracy</div>
+        <div class="metric-value alert">78.1%</div>
+        <div class="metric-sub">Target: &ge; 95.0% (-16.9% gap)</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Audited Spend</div>
+        <div class="metric-value teal">$224.4M</div>
+        <div class="metric-sub">1,500 Global Meetings</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Sunshine Spend at Risk</div>
+        <div class="metric-value alert">$13.7M</div>
+        <div class="metric-sub">6.1% with Critical Flags</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Delinquent Rosters</div>
+        <div class="metric-value alert">184</div>
+        <div class="metric-sub">>14 Days Post-Event SLA</div>
+      </div>
+    </div>
+
+    <!-- Body Content -->
+    <div class="newsletter-body">
+      <!-- Main Content -->
+      <main>
+        <article class="article">
+          <div class="article-tag">Executive Editorial</div>
+          <h2 class="article-title">Why Meeting Data Integrity Protects Our License to Operate</h2>
+          <p class="article-text">
+            In global life sciences, meetings and symposia are the primary touchpoints connecting our medical researchers with Key Opinion Leaders and Healthcare Professionals (HCPs). Yet across the industry, regulatory bodies—including the US Centers for Medicare &amp; Medicaid Services (CMS) and European EFPIA authorities—are intensifying scrutiny over Transfer of Value (ToV) transparency.
+          </p>
+          <div class="quote-card">
+            "When an attendee sign-in roster is missing or an NPI number is omitted, it isn’t just an administrative delay—it creates immediate statutory disclosure liability under federal anti-kickback statutes."
+            <span class="quote-author">— Dr. Elena Rostova, Chief Procurement &amp; Compliance Officer</span>
+          </div>
+          <p class="article-text">
+            Our Q3 data quality audit audited 1,500 meetings representing $224.4 million in total expenditure. While our Medical Compliance pre-clearance process achieved an admirable 96% pass rate, our downstream data capture—specifically post-event attendee reconciliation—remains our single largest point of failure.
+          </p>
+        </article>
+
+        <article class="article">
+          <div class="article-tag">Deep Dive</div>
+          <h2 class="article-title">The "Ghost Physician" Hazard: Closing the 14-Day Roster Gap</h2>
+          <p class="article-text">
+            When a meeting concludes without an uploaded actual attendance roster within 14 calendar days (DLP-5), our transparency engine is forced to default to the preliminary RSVP invite list. This inadvertently credits non-attending physicians who canceled last minute with per-capita meal and room expenditures in federal disclosure databases.
+          </p>
+          <p class="article-text">
+            During the mandatory 45-day CMS dispute window, physicians frequently challenge these phantom transactions. Beginning October 1st, meeting organizers with rosters overdue past 21 days will experience an automated suspension on future meeting intake approvals until the sign-in sheet is verified.
+          </p>
+        </article>
+
+        <article class="article">
+          <div class="article-tag">Card &amp; Fleet Corner</div>
+          <h2 class="article-title">Virtual Cards Outperform BTA Ghost Cards in Aging Clearance</h2>
+          <p class="article-text">
+            Single-Use Virtual Cards demonstrated a stellar <strong>92.4%</strong> reconciliation rate within 12 days, compared to Amex BTA Ghost accounts which average 48 days to clear. By pre-binding virtual card authorizations directly to Cvent SMM Meeting IDs, we eliminate aged unallocated accounts payable. Meanwhile, our ground fleet sustainability program achieved 38% hybrid/EV transfer adoption for Q3.
+          </p>
+        </article>
+      </main>
+
+      <!-- Sidebar -->
+      <aside>
+        <div class="sidebar-widget">
+          <h3 class="widget-title">Requester 5-Point Checklist</h3>
+          <p style="font-size: 0.78rem; color: var(--muted); margin-bottom: 12px;">Mandatory controls before closing any meeting file:</p>
+          
+          <div class="checklist-item">
+            <div class="check-icon">1</div>
+            <div><strong>SMM ID First:</strong> Create Cvent intake before committing contracts to venues.</div>
+          </div>
+          <div class="checklist-item">
+            <div class="check-icon">2</div>
+            <div><strong>10-Digit NPI:</strong> Validate US HCP identification via live NPPES API lookup.</div>
+          </div>
+          <div class="checklist-item">
+            <div class="check-icon">3</div>
+            <div><strong>FMV Tier Check:</strong> Verify speaker honoraria complies with approved medical tiering.</div>
+          </div>
+          <div class="checklist-item">
+            <div class="check-icon">4</div>
+            <div><strong>14-Day Roster:</strong> Upload verified sign-in sheet within 14 days of event close.</div>
+          </div>
+          <div class="checklist-item">
+            <div class="check-icon">5</div>
+            <div><strong>Concur WBS Sync:</strong> Ensure expense report cites the correct clinical project WBS.</div>
+          </div>
+        </div>
+
+        <div class="sidebar-widget">
+          <h3 class="widget-title">Did You Know?</h3>
+          <p style="font-size: 0.82rem; color: #334155; line-height: 1.45;">
+            Under the US Physician Payments Sunshine Act (42 CFR Part 403), knowing failure to report transfers of value carries civil monetary penalties of up to <strong>$100,000 per violation</strong>, capped at <strong>$1,000,000 annually</strong>. Precision in your post-event roster is your legal shield.
+          </p>
+          <div class="warning-badge">
+            <strong>Action Required:</strong> If you own a meeting held before August 15th with an unsubmitted roster, submit your verified sign-in sheet to Cvent immediately.
+          </div>
+        </div>
+
+        <div class="sidebar-widget" style="background: #0f172a; color: white;">
+          <h3 class="widget-title" style="color: white; border-color: var(--cyan);">PharmaInsights Hub</h3>
+          <p style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 10px;">
+            Access real-time data quality scorecards, the interactive process map, and live audit rules:
+          </p>
+          <a href="../pharma_insights_hub/index.html" style="display: block; text-align: center; background: var(--teal); color: white; padding: 8px 12px; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 700;">Open PharmaInsights Hub &rarr;</a>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer class="newsletter-footer">
+      <div>
+        <strong>Meridian BioPharma Global Operations</strong> | Global Governance Secretariat
+      </div>
+      <div class="footer-links">
+        <a href="../process_map/PROCESS_SPECIFICATION.md">SOP-2026-08</a>
+        <a href="../pharma_insights_hub/index.html">Insights Hub</a>
+        <a href="../monthly_report_deck/Global_Meetings_Data_Quality_Executive_Deck.pptx">Executive Deck</a>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>

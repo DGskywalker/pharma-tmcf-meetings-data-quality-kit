@@ -1,0 +1,126 @@
+[
+  {
+    "id": "DLP-1",
+    "name": "Off-Channel / Rogue Booking",
+    "stage": "Meeting Intake & Initiation",
+    "system_boundary": "Requester -> Direct Venue",
+    "root_cause": "Requester bypasses Cvent SMM intake to book hotel/venue directly via phone or personal card to avoid procurement lead time.",
+    "missing_data": [
+      "Cvent Meeting ID",
+      "Master Service Agreement (MSA)",
+      "Negotiated Cancellation Terms",
+      "Initial Budget Approval"
+    ],
+    "downstream_impact": "Invisible spend ($35K-$150K), unmitigated cancellation liability, zero duty of care tracking for attendees.",
+    "severity": "CRITICAL",
+    "compliance_risk": "High (Anti-Kickback, Unapproved venue amenity risks)",
+    "detection_rule": "Concur hotel expense > $1,000 without linked Cvent Meeting ID",
+    "remediation_sla": "Immediate freeze on reimbursement; retroactive intake required within 48h."
+  },
+  {
+    "id": "DLP-2",
+    "name": "HCP Identity & FMV Tier Disconnect",
+    "stage": "Compliance Pre-Clearance & Registration",
+    "system_boundary": "Cvent <-> Veeva CRM / Sunshine Registry",
+    "root_cause": "HCP attendee registered with nickname or personal Gmail; missing 10-digit NPI (US) or National Tax/Medical Council ID (EU).",
+    "missing_data": [
+      "National Provider Identifier (NPI)",
+      "Fair Market Value (FMV) Tier Approval",
+      "State Medical License #",
+      "Cross-Border Approval ID"
+    ],
+    "downstream_impact": "Inability to aggregate Transfer of Value (ToV); mandatory CMS Open Payments / EFPIA disclosure failures.",
+    "severity": "CRITICAL",
+    "compliance_risk": "Extreme (Statutory fines up to $1,000,000 under US Sunshine Act for knowing failure)",
+    "detection_rule": "HCP_Attendees_Count > 0 AND (HCP_NPI_Numbers IS BLANK OR FMV_Tier_Compliant = 'N')",
+    "remediation_sla": "Speaker contract paused until NPI is verified in CMS NPPES database."
+  },
+  {
+    "id": "DLP-3",
+    "name": "Ground Fleet & Scope 3 Telematics Blindspot",
+    "stage": "Travel & Logistics Booking",
+    "system_boundary": "TMC (Amex GBT) <-> Local Ground Suppliers",
+    "root_cause": "Airport transfers, VIP sedans, or group coaches booked via unvetted local vendors without corporate fleet telematics integration.",
+    "missing_data": [
+      "Fleet Booking Confirmation",
+      "Passenger Manifest",
+      "Vehicle Powertrain / EV Flag",
+      "Distance (km) & CO2e (kg)"
+    ],
+    "downstream_impact": "Duty of care failure during traveler transit; incomplete Scope 3 Category 6 (Business Travel) ESG sustainability filings.",
+    "severity": "MEDIUM",
+    "compliance_risk": "Moderate (CSRD / ESG reporting gaps, traveler safety liability)",
+    "detection_rule": "Fleet_Ground_Transfer_Utilized = 'Y' AND Fleet_CO2_Emissions_kg IS NULL",
+    "remediation_sla": "Automated monthly fleet partner vendor reconciliation."
+  },
+  {
+    "id": "DLP-4",
+    "name": "Virtual Card / BTA Master Folio Orphan Charges",
+    "stage": "Payment & Master Folio Billing",
+    "system_boundary": "Hotel Merchant <-> Banking Gateway (Amex BTA / Virtual Card)",
+    "root_cause": "Hotel front desk charges master account with generic descriptor (e.g. 'HOTEL REST CO') without passing Cvent Meeting ID in Card Level 3 data.",
+    "missing_data": [
+      "Level 3 Merchant Data",
+      "Cvent Meeting ID Reference",
+      "Itemized Banquet Event Order (BEO)",
+      "Tax / VAT Breakdown"
+    ],
+    "downstream_impact": "Aged unallocated card balances (60-120 days); manual accounting overhead; risk of duplicate payment via direct invoice.",
+    "severity": "HIGH",
+    "compliance_risk": "High (Financial audit restatement risk, SOX 404 internal control deficiency)",
+    "detection_rule": "Payment_Method IN ('Amex_BTA_Ghost', 'Single_Use_Virtual_Card') AND Corporate_Card_Reconciled_Flag = 'N' AND Days_Since_Event > 30",
+    "remediation_sla": "Virtual card automated push notification to hotel finance within 72h."
+  },
+  {
+    "id": "DLP-5",
+    "name": "Post-Event Attendee Roster Leakage",
+    "stage": "Event Closeout & Actual Spend Allocation",
+    "system_boundary": "On-Site Badge Scan / Sign-In <-> Cvent SMM",
+    "root_cause": "Meeting organizer fails to upload verified physical/virtual sign-in sheet within 14 calendar days; no-shows remain unadjusted.",
+    "missing_data": [
+      "Verified Physical Attendance Sheet",
+      "No-Show / Cancellation Flags",
+      "Per-Capita F&B Actual Spend",
+      "HCP Sign-Off Signatures"
+    ],
+    "downstream_impact": "Per-capita F&B allocated to no-show HCPs results in false Sunshine Act reporting or under-reporting for attending HCPs.",
+    "severity": "CRITICAL",
+    "compliance_risk": "Extreme (False Claims Act exposure, reputational damage, physician dispute disputes)",
+    "detection_rule": "Post_Event_Roster_Captured = 'N' AND Days_To_Roster_Submission > 14",
+    "remediation_sla": "Automatic weekly escalation to BU Vice President and temporary block on future meeting approvals."
+  },
+  {
+    "id": "DLP-6",
+    "name": "Cross-System Financial Code Desync",
+    "stage": "Expense Reporting & ERP Posting",
+    "system_boundary": "SAP Concur <-> SAP S/4HANA ERP",
+    "root_cause": "Meeting expenses filed under operational Cost Center instead of clinical trial WBS code, breaking project ledger reconciliation.",
+    "missing_data": [
+      "WBS Code Validation",
+      "Cost Center Cross-Charge Approval",
+      "Internal Order Number"
+    ],
+    "downstream_impact": "Misstated clinical trial trial budgets; distorted departmental variance reports; manual GL journal adjustments.",
+    "severity": "HIGH",
+    "compliance_risk": "Moderate (Internal managerial accounting distortions)",
+    "detection_rule": "WBS_Code IS BLANK OR Cost_Center DOES NOT MATCH Requester Department Profile",
+    "remediation_sla": "Automated Concur pre-submission validation rule blocking expense report submission."
+  },
+  {
+    "id": "DLP-7",
+    "name": "Cross-Border Regulatory Disclosure Omission",
+    "stage": "HCP Engagement & Travel Crossing",
+    "system_boundary": "Origin Affiliate <-> Host Affiliate Compliance Office",
+    "root_cause": "European or Japanese HCP brought into US symposium without cross-border notification to home affiliate compliance officer.",
+    "missing_data": [
+      "Cross-Border Notification Form (CBNF)",
+      "Home Country Data Privacy Consent",
+      "Withholding Tax Certificate"
+    ],
+    "downstream_impact": "Breach of EFPIA cross-border disclosure provisions; local tax authority withholding penalties.",
+    "severity": "HIGH",
+    "compliance_risk": "High (Cross-border European data privacy and EFPIA code infringement)",
+    "detection_rule": "Cross_Border_HCP_Flag = 'Y' AND Compliance_Approval_Status != 'Approved'",
+    "remediation_sla": "Automated lock on airline ticketing until Cross-Border clearance token is issued."
+  }
+]

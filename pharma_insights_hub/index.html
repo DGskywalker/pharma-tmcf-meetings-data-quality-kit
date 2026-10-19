@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PharmaInsights Hub | Meetings &amp; Events Data Quality &amp; Governance Kit</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <div class="brand-icon">M</div>
+      <div class="brand-text">
+        <h1>PharmaInsights Hub™</h1>
+        <span>Meridian BioPharma Global Operations</span>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#scorecard">Scorecard</a>
+      <a href="#process-map">Process Architecture</a>
+      <a href="#simulator">Live Validator</a>
+      <a href="#downloads">Download Vault</a>
+      <a href="../newsletter/index.html" target="_blank">Newsletter</a>
+      <span class="badge-synthetic">SYNTHETIC SIMULATION</span>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">Global Meetings Governance Kit</div>
+      <h1 class="hero-title">Meetings &amp; Events Data Quality &amp; Engagement Hub</h1>
+      <p class="hero-desc">
+        End-to-end data integrity surveillance connecting Cvent Enterprise SMM, SAP Concur, Amex BTA Virtual Cards, and CMS Sunshine / EFPIA transparency reporting across 1,500 global medical meetings.
+      </p>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-label">Portfolio Accuracy</div>
+          <div class="stat-val alert">78.1%</div>
+          <div class="stat-sub">Enterprise Target: &ge; 95.0% (-16.9% Gap)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Audited Meeting Spend</div>
+          <div class="stat-val teal">$224.4M</div>
+          <div class="stat-sub">1,500 Global Events Audited</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Sunshine Spend at Risk</div>
+          <div class="stat-val alert">$13.7M</div>
+          <div class="stat-sub">6.13% Regulatory Audit Exposure</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Active Exceptions</div>
+          <div class="stat-val">329</div>
+          <div class="stat-sub">1,171 Clean Records (Pass Rate)</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container">
+
+    <!-- SECTION 1: Interactive Data Quality Scorecard -->
+    <section id="scorecard">
+      <div class="section-header">
+        <h2>Interactive Data Quality Scorecard &amp; Exception Explorer</h2>
+        <p>Filter, search, and drill into 1,500 audited meeting records to detect data leakage points and regulatory deficiencies.</p>
+      </div>
+
+      <div class="filter-bar">
+        <div class="tab-group">
+          <button class="tab-btn active" data-filter="ALL">All Records</button>
+          <button class="tab-btn" data-filter="CRITICAL">Critical Regulatory</button>
+          <button class="tab-btn" data-filter="ROSTER">Delinquent Rosters (&gt;14d)</button>
+          <button class="tab-btn" data-filter="CVENT">SMM Bypass</button>
+          <button class="tab-btn" data-filter="NPI">Missing / Invalid NPI</button>
+          <button class="tab-btn" data-filter="CARD">Aged Card AP (&gt;45d)</button>
+          <button class="tab-btn" data-filter="CLEAN">100% Clean Records</button>
+        </div>
+
+        <input type="text" id="searchInput" class="search-input" placeholder="Search Meeting ID, BU, Country...">
+      </div>
+
+      <div class="table-card">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Meeting ID</th>
+              <th>Meeting Name</th>
+              <th>Business Unit</th>
+              <th>Country</th>
+              <th>Actual Spend</th>
+              <th>HCP Count</th>
+              <th>Cvent SMM ID</th>
+              <th>Audit Status</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Populated dynamically by app.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Process Map & Data Leakage Point Explorer -->
+    <section id="process-map" class="process-section">
+      <div class="section-header">
+        <h2>Strategic Meetings Lifecycle &amp; Data Leakage Points (DLP)</h2>
+        <p>Interactive surveillance across the 6 enterprise swimlanes. Click any Data Leakage Point to inspect root causes, regulatory penalties, and SOP remediation protocols.</p>
+      </div>
+
+      <div class="process-grid">
+        <div class="map-container">
+          <img src="../assets/process_map_overview.png" alt="Meridian Meeting Lifecycle Map">
+          <div style="margin-top:10px; display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:0.75rem; color:#94a3b8;">Format: Native Draw.io / SVG Architecture</span>
+            <a href="../process_map/meetings_events_lifecycle.drawio" download style="color:var(--cyan); font-size:0.78rem; text-decoration:none; font-weight:700;">Download Raw Draw.io XML &darr;</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="dlp-list">
+            <div class="dlp-card active" data-dlp="DLP-1">
+              <div class="dlp-header">
+                <span class="dlp-id">DLP-1: INITIATION</span>
+                <span class="dlp-stage">Stage: Meeting Intake</span>
+              </div>
+              <div class="dlp-title">Rogue / Off-Channel Booking</div>
+              <div class="dlp-desc">Requester contacts hotel directly without Cvent intake; spend is invisible and unmitigated.</div>
+            </div>
+
+            <div class="dlp-card" data-dlp="DLP-2">
+              <div class="dlp-header">
+                <span class="dlp-id">DLP-2: REGISTRATION</span>
+                <span class="dlp-stage">Stage: Compliance Gate</span>
+              </div>
+              <div class="dlp-title">HCP Identity &amp; FMV Tier Disconnect</div>
+              <div class="dlp-desc">Missing 10-digit NPI or unapproved honoraria tiering triggers CMS Open Payments non-disclosure fines.</div>
+            </div>
+
+            <div class="dlp-card" data-dlp="DLP-5">
+              <div class="dlp-header">
+                <span class="dlp-id">DLP-5: CLOSEOUT</span>
+                <span class="dlp-stage">Stage: Spend Allocation</span>
+              </div>
+              <div class="dlp-title">Post-Event Attendee Roster Leakage (&gt;14d)</div>
+              <div class="dlp-desc">Delayed attendance sheet upload causes no-show physicians to be falsely credited with transfer-of-value.</div>
+            </div>
+
+            <div class="dlp-card" data-dlp="DLP-4">
+              <div class="dlp-header">
+                <span class="dlp-id">DLP-4: PAYMENT</span>
+                <span class="dlp-stage">Stage: Master Folio BEO</span>
+              </div>
+              <div class="dlp-title">Virtual Card Orphan Charges</div>
+              <div class="dlp-desc">Hotel front desk charges master folio without passing Cvent Meeting ID in Level 3 interchange data.</div>
+            </div>
+
+            <div class="dlp-card" data-dlp="DLP-6">
+              <div class="dlp-header">
+                <span class="dlp-id">DLP-6: ACCOUNTING</span>
+                <span class="dlp-stage">Stage: SAP Concur Posting</span>
+              </div>
+              <div class="dlp-title">Cross-System Financial Code Desync</div>
+              <div class="dlp-desc">Expenses charged to departmental cost center rather than clinical trial project WBS element.</div>
+            </div>
+
+            <div class="dlp-card" data-dlp="DLP-7">
+              <div class="dlp-header">
+                <span class="dlp-id">DLP-7: TRAVEL</span>
+                <span class="dlp-stage">Stage: Cross-Border Crossing</span>
+              </div>
+              <div class="dlp-title">Cross-Border Regulatory Omission</div>
+              <div class="dlp-desc">Foreign HCP invited without bilateral affiliate notification under EFPIA disclosure codes.</div>
+            </div>
+
+            <div class="dlp-card" data-dlp="DLP-3">
+              <div class="dlp-header">
+                <span class="dlp-id">DLP-3: FLEET</span>
+                <span class="dlp-stage">Stage: Logistics Dispatch</span>
+              </div>
+              <div class="dlp-title">Ground Fleet Telematics &amp; Scope 3 Blindspot</div>
+              <div class="dlp-desc">Local shuttle transfers lack CO2e telemetry, causing CSRD sustainability reporting gaps.</div>
+            </div>
+          </div>
+
+          <div id="dlpDetailBox" style="margin-top:16px;">
+            <!-- Rendered dynamically upon click -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Live In-Browser Rule Validator (Simulator) -->
+    <section id="simulator">
+      <div class="section-header">
+        <h2>Live Meeting Data Quality Simulator</h2>
+        <p>Test a prospective meeting record against our 16 enterprise validation rules. Experience real-time pass/fail gating before submitting to Cvent or Concur.</p>
+      </div>
+
+      <div class="simulator-box">
+        <div class="sim-grid">
+          <div class="form-group">
+            <label for="simType">Meeting Type</label>
+            <select id="simType">
+              <option value="Advisory_Board">Advisory Board</option>
+              <option value="Investigator_Meeting">Investigator Meeting</option>
+              <option value="Medical_Symposium">Medical Symposium</option>
+              <option value="Commercial_Launch">Commercial Launch</option>
+              <option value="Internal_Sales_Rally">Internal Sales Rally</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="simCountry">Country Jurisdiction</label>
+            <select id="simCountry">
+              <option value="US">United States (CMS Sunshine)</option>
+              <option value="GB">United Kingdom (ABPI / EFPIA)</option>
+              <option value="DE">Germany (FSA / EFPIA)</option>
+              <option value="FR">France (Loi Bertrand)</option>
+              <option value="CH">Switzerland (Pharma Code)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="simHcpCount">HCP Attendee Count</label>
+            <input type="number" id="simHcpCount" value="12" min="0" max="100">
+          </div>
+
+          <div class="form-group">
+            <label for="simCventId">Cvent SMM ID</label>
+            <input type="text" id="simCventId" value="CVT-849102" placeholder="e.g. CVT-123456 (Leave blank to test DLP-1)">
+          </div>
+
+          <div class="form-group">
+            <label for="simNpi">US HCP NPI Number(s)</label>
+            <input type="text" id="simNpi" value="1948291048" placeholder="10 numeric digits starting with 1 or 2">
+          </div>
+
+          <div class="form-group">
+            <label for="simRosterDays">Days to Post-Event Roster Upload</label>
+            <input type="number" id="simRosterDays" value="8" min="0" max="90">
+          </div>
+
+          <div class="form-group">
+            <label for="simCardRecon">Corporate Card Reconciled?</label>
+            <select id="simCardRecon">
+              <option value="Y">Yes - Reconciled within SLA</option>
+              <option value="N">No - Unreconciled / Aged Past 45 Days</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="simVariance">Actual Spend Budget Variance (%)</label>
+            <input type="number" id="simVariance" value="4.5" step="0.1">
+          </div>
+        </div>
+
+        <button id="btnRunSim" class="btn-primary">Run Live Compliance Check &rarr;</button>
+
+        <div id="simResult" class="sim-result" style="display:none;"></div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Stakeholder Asset Vault -->
+    <section id="downloads">
+      <div class="section-header">
+        <h2>Stakeholder Asset Vault &amp; Toolkit</h2>
+        <p>Direct download access to all production deliverables, raw datasets, presentation decks, and executive multimedia kits.</p>
+      </div>
+
+      <div class="vault-grid">
+        <div class="vault-card">
+          <div>
+            <h3 class="vault-title">Monthly Executive Deck (.PPTX)</h3>
+            <p class="vault-desc">8-slide executive PowerPoint presentation with embedded high-res Pareto charts, scorecards, and CAPA roadmap.</p>
+          </div>
+          <a href="../monthly_report_deck/Global_Meetings_Data_Quality_Executive_Deck.pptx" download class="vault-link">Download Presentation Deck (.pptx) &darr;</a>
+        </div>
+
+        <div class="vault-card">
+          <div>
+            <h3 class="vault-title">Executive Multi-Tab Audit (.XLSX)</h3>
+            <p class="vault-desc">Formatted multi-tab workbook with Executive Dashboard, 1,500 Flagged Register with conditional formatting, and Rules Dictionary.</p>
+          </div>
+          <a href="../data_quality/synthetic_meetings_audit.xlsx" download class="vault-link">Download Audit Workbook (.xlsx) &darr;</a>
+        </div>
+
+        <div class="vault-card">
+          <div>
+            <h3 class="vault-title">Native Excel Formula Auditor (.XLSX)</h3>
+            <p class="vault-desc">Client-side spreadsheet proving all 16 data quality rules can execute purely via native Excel formulas with no Python runtime.</p>
+          </div>
+          <a href="../data_quality/excel_vba_formula_check.xlsx" download class="vault-link">Download Formula Auditor (.xlsx) &darr;</a>
+        </div>
+
+        <div class="vault-card">
+          <div>
+            <h3 class="vault-title">Process Architecture (.DRAWIO &amp; .SVG)</h3>
+            <p class="vault-desc">Editable Draw.io / diagrams.net XML file and crisp high-res SVG vector map mapping all 6 swimlanes and 7 Data Leakage Points.</p>
+          </div>
+          <a href="../process_map/meetings_events_lifecycle.drawio" download class="vault-link">Download Process Map (.drawio) &darr;</a>
+        </div>
+
+        <div class="vault-card">
+          <div>
+            <h3 class="vault-title">Raw Synthetic Datasets (.CSV)</h3>
+            <p class="vault-desc">1,500 meeting records with 28 attributes across 4 Business Units, flagged error codes, and audit penalty scores.</p>
+          </div>
+          <a href="../data_quality/synthetic_meetings_flagged.csv" download class="vault-link">Download Flagged CSV (1,500 Records) &darr;</a>
+        </div>
+
+        <div class="vault-card">
+          <div>
+            <h3 class="vault-title">60-Second Explainer Video (.MP4)</h3>
+            <p class="vault-desc">Rendered 60-second motion graphic explainer video with synchronized subtitles, audio cues, and Canva/CapCut production guide.</p>
+          </div>
+          <a href="../video/meetings_data_quality_explainer.mp4" download class="vault-link">Download Explainer Video (.mp4) &darr;</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <p><strong>Meridian BioPharma Global Operations</strong> | Global Meetings Governance</p>
+        <p style="font-size:0.75rem; margin-top:4px; color:#64748b;">
+          Compliance Architecture: US CMS Open Payments (42 CFR Part 403) • EFPIA Disclosure Code 2014 • UK ABPI • ISO 14064
+        </p>
+      </div>
+      <div>
+        <span class="badge-synthetic">100% SYNTHETIC DATASET • FOR DEMONSTRATION PURPOSES ONLY</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

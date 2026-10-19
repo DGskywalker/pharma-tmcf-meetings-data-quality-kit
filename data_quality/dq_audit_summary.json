@@ -1,0 +1,133 @@
+{
+  "audit_timestamp": "2026-10-18T10:00:00Z",
+  "entity": "Meridian BioPharma Global Operations",
+  "total_records_audited": 1500,
+  "clean_records_count": 1171,
+  "flagged_records_count": 329,
+  "overall_accuracy_percentage": 78.07,
+  "weighted_data_health_index": 87.97,
+  "total_expenditure_audited_usd": 224371770.23,
+  "critical_regulatory_exposure_spend_usd": 13746683.8,
+  "critical_spend_exposure_percentage": 6.13,
+  "domain_health_scores": {
+    "Meetings": 94.2,
+    "Card": 92.9,
+    "Compliance": 96.2,
+    "Fleet": 94.2,
+    "Financial": 95.9,
+    "Operational": 93.2,
+    "Policy": 91.0,
+    "Governance": 100.0
+  },
+  "business_unit_breakdown": [
+    {
+      "Business_Unit": "Immunology_Inflammation",
+      "Total_Meetings": 401,
+      "Clean_Meetings": 321,
+      "Critical_Meetings": 23,
+      "Total_Spend_USD": 59236549.89,
+      "Critical_Spend_USD": 3560403.53,
+      "Accuracy_Pct": 80.05,
+      "Critical_Spend_Exposure_Pct": 6.01
+    },
+    {
+      "Business_Unit": "Oncology",
+      "Total_Meetings": 358,
+      "Clean_Meetings": 269,
+      "Critical_Meetings": 19,
+      "Total_Spend_USD": 53986834.84,
+      "Critical_Spend_USD": 2760737.5,
+      "Accuracy_Pct": 75.14,
+      "Critical_Spend_Exposure_Pct": 5.11
+    },
+    {
+      "Business_Unit": "Rare_Disease",
+      "Total_Meetings": 360,
+      "Clean_Meetings": 286,
+      "Critical_Meetings": 21,
+      "Total_Spend_USD": 52577386.05,
+      "Critical_Spend_USD": 2969173.7599999993,
+      "Accuracy_Pct": 79.44,
+      "Critical_Spend_Exposure_Pct": 5.65
+    },
+    {
+      "Business_Unit": "Vaccines_Infectious",
+      "Total_Meetings": 381,
+      "Clean_Meetings": 295,
+      "Critical_Meetings": 25,
+      "Total_Spend_USD": 58570999.45,
+      "Critical_Spend_USD": 4456369.01,
+      "Accuracy_Pct": 77.43,
+      "Critical_Spend_Exposure_Pct": 7.61
+    }
+  ],
+  "top_rule_failures": [
+    {
+      "Rule_Code": "R04_ADVANCE_LEAD_TIME_POLICY",
+      "Rule_Name": "21-Day Advance Notice Policy",
+      "Dimension": "Timeliness",
+      "Domain": "Policy",
+      "Severity": "MEDIUM",
+      "DLP_Reference": "Operational",
+      "Failure_Count": 54,
+      "Failure_Rate_Pct": 3.6,
+      "Description": "High-budget HCP meetings (> $50,000) must have >= 21 days lead time unless fast-track exception noted."
+    },
+    {
+      "Rule_Code": "R10_VIRTUAL_CARD_AGING_RECON",
+      "Rule_Name": "Virtual / BTA Card Reconciliation Aging",
+      "Dimension": "Timeliness",
+      "Domain": "Card",
+      "Severity": "HIGH",
+      "DLP_Reference": "DLP-4",
+      "Failure_Count": 42,
+      "Failure_Rate_Pct": 2.8,
+      "Description": "Ghost BTA and Virtual Cards must be reconciled within 45 days of event completion."
+    },
+    {
+      "Rule_Code": "R12_SPEND_VARIANCE_TOLERANCE",
+      "Rule_Name": "Financial Spend Budget Variance (+25% Threshold)",
+      "Dimension": "Consistency",
+      "Domain": "Financial",
+      "Severity": "MEDIUM",
+      "DLP_Reference": "DLP-6",
+      "Failure_Count": 35,
+      "Failure_Rate_Pct": 2.33,
+      "Description": "Actual spend must not exceed estimated budget by > 25.0% without supplemental variance approval."
+    },
+    {
+      "Rule_Code": "R08_FMV_HONORARIA_VERIFICATION",
+      "Rule_Name": "Fair Market Value (FMV) Tier Clearance",
+      "Dimension": "Consistency",
+      "Domain": "Compliance",
+      "Severity": "HIGH",
+      "DLP_Reference": "DLP-2",
+      "Failure_Count": 32,
+      "Failure_Rate_Pct": 2.13,
+      "Description": "Meetings cannot be Approved if FMV Tier Compliance is marked 'N'."
+    },
+    {
+      "Rule_Code": "R02_DATE_CHRONOLOGY",
+      "Rule_Name": "Date Chronology Logic",
+      "Dimension": "Validity",
+      "Domain": "Operational",
+      "Severity": "CRITICAL",
+      "DLP_Reference": "Operational",
+      "Failure_Count": 29,
+      "Failure_Rate_Pct": 1.93,
+      "Description": "Event End_Date must be greater than or equal to Start_Date."
+    },
+    {
+      "Rule_Code": "R05_CVENT_SMM_BINDING",
+      "Rule_Name": "Cvent SMM ID Adherence",
+      "Dimension": "Completeness",
+      "Domain": "Meetings",
+      "Severity": "CRITICAL",
+      "DLP_Reference": "DLP-1",
+      "Failure_Count": 27,
+      "Failure_Rate_Pct": 1.8,
+      "Description": "Any meeting with external HCP attendees must possess an active Cvent SMM ID (CVT-XXXXXX)."
+    }
+  ],
+  "disclaimer": "ALL DATA AND METRICS ARE 100% SYNTHETIC FOR SIMULATION PURPOSES"
+}

@@ -1,0 +1,360 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%" style="background:#090D16; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="50%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="reqGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A8A" />
+      <stop offset="100%" stop-color="#172554" />
+    </linearGradient>
+    <linearGradient id="compGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#581C87" />
+      <stop offset="100%" stop-color="#3B0764" />
+    </linearGradient>
+    <linearGradient id="smmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#065F46" />
+      <stop offset="100%" stop-color="#022C22" />
+    </linearGradient>
+    <linearGradient id="tmcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#92400E" />
+      <stop offset="100%" stop-color="#451A03" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9D174D" />
+      <stop offset="100%" stop-color="#500724" />
+    </linearGradient>
+    <linearGradient id="erpGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#881337" />
+      <stop offset="100%" stop-color="#4C0519" />
+    </linearGradient>
+    <linearGradient id="dlpGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DC2626" />
+      <stop offset="100%" stop-color="#7F1D1D" />
+    </linearGradient>
+
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+    <filter id="glowRed" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#EF4444" flood-opacity="0.8"/>
+    </filter>
+    
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38BDF8"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#F59E0B"/>
+    </marker>
+  </defs>
+
+  <!-- Title Header Banner -->
+  <rect x="30" y="20" width="1860" height="65" rx="10" fill="url(#headerGrad)" stroke="#334155" stroke-width="1.5" filter="url(#dropShadow)" />
+  <text x="50" y="52" fill="#F8FAFC" font-size="20" font-weight="700" letter-spacing="0.5">MERIDIAN BIOPHARMA GLOBAL OPERATIONS | STRATEGIC MEETINGS &amp; EVENTS END-TO-END LIFECYCLE</text>
+  <text x="50" y="73" fill="#38BDF8" font-size="12" font-weight="600">Enterprise Process Architecture &amp; High-Risk Data Leakage Points (DLP) Matrix | [CONFIDENTIAL SYNTHETIC SIMULATION]</text>
+  <rect x="1620" y="32" width="250" height="40" rx="6" fill="#1E293B" stroke="#475569" />
+  <text x="1745" y="57" fill="#FCD34D" font-size="11" font-weight="700" text-anchor="middle">GOVERNANCE LEVEL: ULTRA-COMPLEX</text>
+
+  <!-- Swimlane 1: Requester & Business Unit -->
+  <g transform="translate(30, 95)">
+    <rect width="1860" height="140" fill="#0B132B" stroke="#1E293B" rx="8" />
+    <rect width="210" height="140" fill="#111C44" rx="8" />
+    <text x="15" y="45" fill="#38BDF8" font-size="12" font-weight="700">1. REQUESTER &amp; BU</text>
+    <text x="15" y="65" fill="#94A3B8" font-size="10">Commercial, Medical Affairs,</text>
+    <text x="15" y="80" fill="#94A3B8" font-size="10">Clinical R&amp;D Project Owners</text>
+    <text x="15" y="115" fill="#64748B" font-size="9">Tool: Intake / Cvent Portal</text>
+  </g>
+
+  <!-- Swimlane 2: Medical Compliance & Legal -->
+  <g transform="translate(30, 245)">
+    <rect width="1860" height="140" fill="#0B132B" stroke="#1E293B" rx="8" />
+    <rect width="210" height="140" fill="#1C1438" rx="8" />
+    <text x="15" y="45" fill="#C084FC" font-size="12" font-weight="700">2. COMPLIANCE &amp; LEGAL</text>
+    <text x="15" y="65" fill="#94A3B8" font-size="10">FMV Honoraria Review,</text>
+    <text x="15" y="80" fill="#94A3B8" font-size="10">Sunshine / Anti-Kickback</text>
+    <text x="15" y="115" fill="#64748B" font-size="9">Tool: Veeva / Compliance Gate</text>
+  </g>
+
+  <!-- Swimlane 3: SMM Platform (Cvent) -->
+  <g transform="translate(30, 395)">
+    <rect width="1860" height="140" fill="#0B132B" stroke="#1E293B" rx="8" />
+    <rect width="210" height="140" fill="#062C26" rx="8" />
+    <text x="15" y="45" fill="#34D399" font-size="12" font-weight="700">3. SMM ENTERPRISE</text>
+    <text x="15" y="65" fill="#94A3B8" font-size="10">Meeting Registration, NPI</text>
+    <text x="15" y="80" fill="#94A3B8" font-size="10">Validation, Session Agenda</text>
+    <text x="15" y="115" fill="#64748B" font-size="9">Tool: Cvent Enterprise SMM</text>
+  </g>
+
+  <!-- Swimlane 4: Travel & Logistics -->
+  <g transform="translate(30, 545)">
+    <rect width="1860" height="140" fill="#0B132B" stroke="#1E293B" rx="8" />
+    <rect width="210" height="140" fill="#2E1C07" rx="8" />
+    <text x="15" y="45" fill="#FBBF24" font-size="12" font-weight="700">4. TRAVEL &amp; LOGISTICS</text>
+    <text x="15" y="65" fill="#94A3B8" font-size="10">Air, Hotel Room Block,</text>
+    <text x="15" y="80" fill="#94A3B8" font-size="10">Fleet &amp; Ground Mobility</text>
+    <text x="15" y="115" fill="#64748B" font-size="9">Tool: Amex GBT / Travel Portal</text>
+  </g>
+
+  <!-- Swimlane 5: Payment & Expense -->
+  <g transform="translate(30, 695)">
+    <rect width="1860" height="140" fill="#0B132B" stroke="#1E293B" rx="8" />
+    <rect width="210" height="140" fill="#360C1E" rx="8" />
+    <text x="15" y="45" fill="#F472B6" font-size="12" font-weight="700">5. PAYMENT &amp; RECON</text>
+    <text x="15" y="65" fill="#94A3B8" font-size="10">Virtual Ghost Card, Hotel</text>
+    <text x="15" y="80" fill="#94A3B8" font-size="10">Master Folio, Employee T&amp;E</text>
+    <text x="15" y="115" fill="#64748B" font-size="9">Tool: SAP Concur / Amex BTA</text>
+  </g>
+
+  <!-- Swimlane 6: ERP & Transparency Lake -->
+  <g transform="translate(30, 845)">
+    <rect width="1860" height="145" fill="#0B132B" stroke="#1E293B" rx="8" />
+    <rect width="210" height="145" fill="#360A16" rx="8" />
+    <text x="15" y="45" fill="#FB7185" font-size="12" font-weight="700">6. ERP &amp; TRANSPARENCY</text>
+    <text x="15" y="65" fill="#94A3B8" font-size="10">WBS Settle, Spend Lake,</text>
+    <text x="15" y="80" fill="#94A3B8" font-size="10">CMS Sunshine &amp; EFPIA</text>
+    <text x="15" y="115" fill="#64748B" font-size="9">Tool: SAP S/4HANA / Snowflake</text>
+  </g>
+
+  <!-- Flow Connectors (Bridges & Arrows) -->
+  <!-- n1 to n2 -->
+  <path d="M 380 165 L 430 165 L 430 275" fill="none" stroke="#38BDF8" stroke-width="2.5" marker-end="url(#arrow)" />
+  <text x="440" y="220" fill="#94A3B8" font-size="10" font-weight="600">Submit Request</text>
+
+  <!-- n2 to n3 -->
+  <path d="M 520 315 L 560 315 L 560 465 L 600 465" fill="none" stroke="#38BDF8" stroke-width="2.5" marker-end="url(#arrow)" />
+  <text x="568" y="380" fill="#34D399" font-size="10" font-weight="700">Compliance Approved</text>
+
+  <!-- n3 to n9 (Virtual card issuance) -->
+  <path d="M 690 500 L 690 730" fill="none" stroke="#F472B6" stroke-width="2.5" stroke-dasharray="4" marker-end="url(#arrow)" />
+  <text x="700" y="615" fill="#F472B6" font-size="10" font-weight="600">Auto-Issue Virtual Card</text>
+
+  <!-- n3 to n4 -->
+  <path d="M 780 465 L 830 465" fill="none" stroke="#38BDF8" stroke-width="2.5" marker-end="url(#arrow)" />
+  <text x="785" y="455" fill="#94A3B8" font-size="10" font-weight="600">Publish Event</text>
+
+  <!-- n4 to n5 -->
+  <path d="M 920 500 L 920 580" fill="none" stroke="#38BDF8" stroke-width="2.5" marker-end="url(#arrow)" />
+  <text x="930" y="545" fill="#FBBF24" font-size="10" font-weight="600">HCP Travel Request</text>
+
+  <!-- n5 to n6 -->
+  <path d="M 1010 615 L 1060 615" fill="none" stroke="#38BDF8" stroke-width="2.5" marker-end="url(#arrow)" />
+
+  <!-- n4 to n7 (Arrive at Event) -->
+  <path d="M 1010 465 L 1150 465 L 1150 200" fill="none" stroke="#38BDF8" stroke-width="2.5" marker-end="url(#arrow)" />
+  <text x="1070" y="445" fill="#94A3B8" font-size="10" font-weight="600">Travelers Check In</text>
+
+  <!-- n7 to n8 -->
+  <path d="M 1240 165 L 1290 165" fill="none" stroke="#38BDF8" stroke-width="2.5" marker-end="url(#arrow)" />
+  <text x="1245" y="155" fill="#94A3B8" font-size="10" font-weight="600">Adjourned</text>
+
+  <!-- n8 to n10 -->
+  <path d="M 1380 200 L 1380 730" fill="none" stroke="#38BDF8" stroke-width="2.5" marker-end="url(#arrow)" />
+  <text x="1390" y="470" fill="#F472B6" font-size="10" font-weight="700">Actual Attendee Roster Upload</text>
+
+  <!-- n9 to n10 (Card Master Folio Charge) -->
+  <path d="M 780 765 L 1290 765" fill="none" stroke="#F472B6" stroke-width="2.5" stroke-dasharray="4" marker-end="url(#arrow)" />
+  <text x="960" y="755" fill="#F472B6" font-size="10" font-weight="600">Master Folio Charged (BEO &amp; Hotel Invoices)</text>
+
+  <!-- n10 to n11 -->
+  <path d="M 1470 765 L 1570 765 L 1570 880" fill="none" stroke="#38BDF8" stroke-width="2.5" marker-end="url(#arrow)" />
+  <text x="1578" y="820" fill="#FB7185" font-size="10" font-weight="600">Approve &amp; Settle</text>
+
+  <!-- n11 to n13 -->
+  <path d="M 1660 915 L 1710 915" fill="none" stroke="#38BDF8" stroke-width="2.5" marker-end="url(#arrow)" />
+  <text x="1665" y="905" fill="#94A3B8" font-size="10" font-weight="600">ETL Feed</text>
+
+  <!-- n13 to n12 -->
+  <path d="M 1795 880 L 1795 350" fill="none" stroke="#C084FC" stroke-width="2.5" marker-end="url(#arrow)" />
+  <text x="1805" y="600" fill="#C084FC" font-size="10" font-weight="700">Annual Audit &amp; Disclosure</text>
+
+  <!-- Process Step Nodes -->
+  <!-- Node 1: Initiation -->
+  <g transform="translate(260, 130)" filter="url(#dropShadow)">
+    <rect width="180" height="70" rx="8" fill="url(#reqGrad)" stroke="#3B82F6" stroke-width="1.5"/>
+    <text x="90" y="28" fill="#F8FAFC" font-size="11" font-weight="700" text-anchor="middle">Meeting Initiation</text>
+    <text x="90" y="44" fill="#93C5FD" font-size="9" text-anchor="middle">Define Purpose, Budget,</text>
+    <text x="90" y="58" fill="#93C5FD" font-size="9" text-anchor="middle">Dates, WBS &amp; Cost Center</text>
+  </g>
+
+  <!-- Node 2: Compliance Review -->
+  <g transform="translate(390, 275)" filter="url(#dropShadow)">
+    <polygon points="95,0 190,40 95,80 0,40" fill="url(#compGrad)" stroke="#A855F7" stroke-width="1.5"/>
+    <text x="95" y="36" fill="#F8FAFC" font-size="10" font-weight="700" text-anchor="middle">Compliance Review</text>
+    <text x="95" y="50" fill="#E9D5FF" font-size="8.5" text-anchor="middle">FMV Tiers &amp; Conflict Check</text>
+  </g>
+
+  <!-- Node 3: Cvent SMM Setup -->
+  <g transform="translate(600, 430)" filter="url(#dropShadow)">
+    <rect width="180" height="70" rx="8" fill="url(#smmGrad)" stroke="#10B981" stroke-width="1.5"/>
+    <text x="90" y="28" fill="#F8FAFC" font-size="11" font-weight="700" text-anchor="middle">Cvent SMM Setup</text>
+    <text x="90" y="44" fill="#6EE7B7" font-size="9" text-anchor="middle">Issue Meeting ID (CVT-XXX)</text>
+    <text x="90" y="58" fill="#6EE7B7" font-size="9" text-anchor="middle">NPI &amp; Attendee Rules Gate</text>
+  </g>
+
+  <!-- Node 4: HCP Registration -->
+  <g transform="translate(830, 430)" filter="url(#dropShadow)">
+    <rect width="180" height="70" rx="8" fill="url(#smmGrad)" stroke="#10B981" stroke-width="1.5"/>
+    <text x="90" y="28" fill="#F8FAFC" font-size="11" font-weight="700" text-anchor="middle">HCP Registration</text>
+    <text x="90" y="44" fill="#6EE7B7" font-size="9" text-anchor="middle">Capture 10-Digit NPI &amp; Tax ID</text>
+    <text x="90" y="58" fill="#6EE7B7" font-size="9" text-anchor="middle">Travel &amp; Room Block Profile</text>
+  </g>
+
+  <!-- Node 5: TMC Booking -->
+  <g transform="translate(830, 580)" filter="url(#dropShadow)">
+    <rect width="180" height="70" rx="8" fill="url(#tmcGrad)" stroke="#F59E0B" stroke-width="1.5"/>
+    <text x="90" y="28" fill="#F8FAFC" font-size="11" font-weight="700" text-anchor="middle">TMC Air &amp; Hotel</text>
+    <text x="90" y="44" fill="#FDE68A" font-size="9" text-anchor="middle">Book Corporate Fares</text>
+    <text x="90" y="58" fill="#FDE68A" font-size="9" text-anchor="middle">Attach Cvent Meeting ID</text>
+  </g>
+
+  <!-- Node 6: Ground Fleet Dispatch -->
+  <g transform="translate(1060, 580)" filter="url(#dropShadow)">
+    <rect width="180" height="70" rx="8" fill="url(#tmcGrad)" stroke="#F59E0B" stroke-width="1.5"/>
+    <text x="90" y="28" fill="#F8FAFC" font-size="11" font-weight="700" text-anchor="middle">Ground Fleet Logistics</text>
+    <text x="90" y="44" fill="#FDE68A" font-size="9" text-anchor="middle">Executive Shuttles &amp; EV Fleet</text>
+    <text x="90" y="58" fill="#FDE68A" font-size="9" text-anchor="middle">Telematics CO2e Recording</text>
+  </g>
+
+  <!-- Node 7: Event Execution -->
+  <g transform="translate(1060, 130)" filter="url(#dropShadow)">
+    <rect width="180" height="70" rx="8" fill="url(#reqGrad)" stroke="#3B82F6" stroke-width="1.5"/>
+    <text x="90" y="28" fill="#F8FAFC" font-size="11" font-weight="700" text-anchor="middle">Event Execution</text>
+    <text x="90" y="44" fill="#93C5FD" font-size="9" text-anchor="middle">Badge RFID Scans &amp;</text>
+    <text x="90" y="58" fill="#93C5FD" font-size="9" text-anchor="middle">Sign-In Roster Collection</text>
+  </g>
+
+  <!-- Node 8: Post-Event Closeout -->
+  <g transform="translate(1290, 130)" filter="url(#dropShadow)">
+    <rect width="180" height="70" rx="8" fill="url(#reqGrad)" stroke="#3B82F6" stroke-width="1.5"/>
+    <text x="90" y="28" fill="#F8FAFC" font-size="11" font-weight="700" text-anchor="middle">Roster Submission</text>
+    <text x="90" y="44" fill="#93C5FD" font-size="9" text-anchor="middle">Upload Final Attendance &lt;14d</text>
+    <text x="90" y="58" fill="#93C5FD" font-size="9" text-anchor="middle">Mark No-Shows &amp; Cancellations</text>
+  </g>
+
+  <!-- Node 9: Virtual Card Issuance -->
+  <g transform="translate(600, 730)" filter="url(#dropShadow)">
+    <rect width="180" height="70" rx="8" fill="url(#cardGrad)" stroke="#EC4899" stroke-width="1.5"/>
+    <text x="90" y="28" fill="#F8FAFC" font-size="11" font-weight="700" text-anchor="middle">Virtual Card Issuance</text>
+    <text x="90" y="44" fill="#FBCFE8" font-size="9" text-anchor="middle">Single-Use Pre-Funded Card</text>
+    <text x="90" y="58" fill="#FBCFE8" font-size="9" text-anchor="middle">Locked to Venue Merchant</text>
+  </g>
+
+  <!-- Node 10: SAP Concur Expense -->
+  <g transform="translate(1290, 730)" filter="url(#dropShadow)">
+    <rect width="180" height="70" rx="8" fill="url(#cardGrad)" stroke="#EC4899" stroke-width="1.5"/>
+    <text x="90" y="28" fill="#F8FAFC" font-size="11" font-weight="700" text-anchor="middle">SAP Concur Expense</text>
+    <text x="90" y="44" fill="#FBCFE8" font-size="9" text-anchor="middle">Auto-Match Virtual Card BEO</text>
+    <text x="90" y="58" fill="#FBCFE8" font-size="9" text-anchor="middle">Per-Capita Meal Allocation</text>
+  </g>
+
+  <!-- Node 11: SAP S/4HANA Posting -->
+  <g transform="translate(1480, 880)" filter="url(#dropShadow)">
+    <rect width="180" height="70" rx="8" fill="url(#erpGrad)" stroke="#F43F5E" stroke-width="1.5"/>
+    <text x="90" y="28" fill="#F8FAFC" font-size="11" font-weight="700" text-anchor="middle">SAP S/4HANA Posting</text>
+    <text x="90" y="44" fill="#FDA4AF" font-size="9" text-anchor="middle">Cost Center &amp; WBS Ledger</text>
+    <text x="90" y="58" fill="#FDA4AF" font-size="9" text-anchor="middle">Clear Virtual Card Accounts</text>
+  </g>
+
+  <!-- Node 13: Snowflake Spend Lake -->
+  <g transform="translate(1710, 880)" filter="url(#dropShadow)">
+    <rect width="170" height="70" rx="8" fill="url(#erpGrad)" stroke="#F43F5E" stroke-width="1.5"/>
+    <text x="85" y="28" fill="#F8FAFC" font-size="11" font-weight="700" text-anchor="middle">Snowflake Spend Lake</text>
+    <text x="85" y="44" fill="#FDA4AF" font-size="9" text-anchor="middle">Automated NPI ToV Table</text>
+    <text x="85" y="58" fill="#FDA4AF" font-size="9" text-anchor="middle">US CMS &amp; EFPIA Export</text>
+  </g>
+
+  <!-- Node 12: Compliance Audit -->
+  <g transform="translate(1710, 275)" filter="url(#dropShadow)">
+    <rect width="170" height="70" rx="8" fill="url(#compGrad)" stroke="#A855F7" stroke-width="1.5"/>
+    <text x="85" y="28" fill="#F8FAFC" font-size="11" font-weight="700" text-anchor="middle">Transparency Sign-Off</text>
+    <text x="85" y="44" fill="#E9D5FF" font-size="9" text-anchor="middle">Federal Disclosure Portal</text>
+    <text x="85" y="58" fill="#E9D5FF" font-size="9" text-anchor="middle">Dispute Resolution Window</text>
+  </g>
+
+  <!-- DATA LEAKAGE POINT CALLOUTS (VIVID RED GLOW BADGES) -->
+  <!-- DLP-1 -->
+  <g transform="translate(250, 95)" filter="url(#glowRed)">
+    <rect width="190" height="48" rx="6" fill="url(#dlpGrad)" stroke="#EF4444" stroke-width="2"/>
+    <text x="95" y="18" fill="#FFFFFF" font-size="9" font-weight="800" text-anchor="middle">CRITICAL FAILURE: DLP-1</text>
+    <text x="95" y="31" fill="#FEF2F2" font-size="8" text-anchor="middle">Rogue Direct Booking / SMM Bypass</text>
+    <text x="95" y="42" fill="#FCA5A5" font-size="7.5" text-anchor="middle">Missing Cvent ID &amp; MSA Contracts</text>
+  </g>
+
+  <!-- DLP-7 -->
+  <g transform="translate(390, 240)" filter="url(#glowRed)">
+    <rect width="190" height="48" rx="6" fill="url(#dlpGrad)" stroke="#EF4444" stroke-width="2"/>
+    <text x="95" y="18" fill="#FFFFFF" font-size="9" font-weight="800" text-anchor="middle">HIGH RISK: DLP-7</text>
+    <text x="95" y="31" fill="#FEF2F2" font-size="8" text-anchor="middle">Cross-Border Regulatory Omission</text>
+    <text x="95" y="42" fill="#FCA5A5" font-size="7.5" text-anchor="middle">Missing Host/Home Country Sign-Off</text>
+  </g>
+
+  <!-- DLP-2 -->
+  <g transform="translate(390, 360)" filter="url(#glowRed)">
+    <rect width="190" height="48" rx="6" fill="url(#dlpGrad)" stroke="#EF4444" stroke-width="2"/>
+    <text x="95" y="18" fill="#FFFFFF" font-size="9" font-weight="800" text-anchor="middle">CRITICAL FAILURE: DLP-2</text>
+    <text x="95" y="31" fill="#FEF2F2" font-size="8" text-anchor="middle">HCP Identity &amp; FMV Disconnect</text>
+    <text x="95" y="42" fill="#FCA5A5" font-size="7.5" text-anchor="middle">Missing 10-Digit NPI / Unvetted Tier</text>
+  </g>
+
+  <!-- DLP-4 -->
+  <g transform="translate(600, 805)" filter="url(#glowRed)">
+    <rect width="190" height="48" rx="6" fill="url(#dlpGrad)" stroke="#EF4444" stroke-width="2"/>
+    <text x="95" y="18" fill="#FFFFFF" font-size="9" font-weight="800" text-anchor="middle">HIGH RISK: DLP-4</text>
+    <text x="95" y="31" fill="#FEF2F2" font-size="8" text-anchor="middle">Virtual Card Orphan Charges</text>
+    <text x="95" y="42" fill="#FCA5A5" font-size="7.5" text-anchor="middle">Hotel Folio Missing Level 3 Data</text>
+  </g>
+
+  <!-- DLP-3 -->
+  <g transform="translate(950, 655)" filter="url(#glowRed)">
+    <rect width="190" height="48" rx="6" fill="url(#dlpGrad)" stroke="#EF4444" stroke-width="2"/>
+    <text x="95" y="18" fill="#FFFFFF" font-size="9" font-weight="800" text-anchor="middle">MEDIUM RISK: DLP-3</text>
+    <text x="95" y="31" fill="#FEF2F2" font-size="8" text-anchor="middle">Fleet Telematics &amp; ESG Blindspot</text>
+    <text x="95" y="42" fill="#FCA5A5" font-size="7.5" text-anchor="middle">Unmetered Scope 3 CO2 &amp; Passenger Gap</text>
+  </g>
+
+  <!-- DLP-5 -->
+  <g transform="translate(1280, 95)" filter="url(#glowRed)">
+    <rect width="200" height="48" rx="6" fill="url(#dlpGrad)" stroke="#EF4444" stroke-width="2"/>
+    <text x="100" y="18" fill="#FFFFFF" font-size="9" font-weight="800" text-anchor="middle">CRITICAL FAILURE: DLP-5</text>
+    <text x="100" y="31" fill="#FEF2F2" font-size="8" text-anchor="middle">Post-Event Roster Leakage (&gt;14d)</text>
+    <text x="100" y="42" fill="#FCA5A5" font-size="7.5" text-anchor="middle">No-Shows Distort Per-Capita Sunshine ToV</text>
+  </g>
+
+  <!-- DLP-6 -->
+  <g transform="translate(1280, 805)" filter="url(#glowRed)">
+    <rect width="200" height="48" rx="6" fill="url(#dlpGrad)" stroke="#EF4444" stroke-width="2"/>
+    <text x="100" y="18" fill="#FFFFFF" font-size="9" font-weight="800" text-anchor="middle">HIGH RISK: DLP-6</text>
+    <text x="100" y="31" fill="#FEF2F2" font-size="8" text-anchor="middle">Financial WBS Code Desync</text>
+    <text x="100" y="42" fill="#FCA5A5" font-size="7.5" text-anchor="middle">Concur Expense Mismatch vs Clinical Trial</text>
+  </g>
+
+  <!-- Legend & Metadata Footer -->
+  <g transform="translate(30, 1000)">
+    <rect width="1860" height="60" rx="8" fill="#0F172A" stroke="#334155" />
+    <text x="25" y="35" fill="#E2E8F0" font-size="11" font-weight="700">LEGEND &amp; CONTROL GATES:</text>
+    
+    <circle cx="210" cy="30" r="8" fill="#3B82F6" />
+    <text x="225" y="35" fill="#94A3B8" font-size="10">Requester Stage</text>
+
+    <circle cx="340" cy="30" r="8" fill="#A855F7" />
+    <text x="355" y="35" fill="#94A3B8" font-size="10">Compliance Gate</text>
+
+    <circle cx="480" cy="30" r="8" fill="#10B981" />
+    <text x="495" y="35" fill="#94A3B8" font-size="10">SMM Cvent System</text>
+
+    <circle cx="630" cy="30" r="8" fill="#F59E0B" />
+    <text x="645" y="35" fill="#94A3B8" font-size="10">Travel &amp; Logistics Agency</text>
+
+    <circle cx="780" cy="30" r="8" fill="#EC4899" />
+    <text x="795" y="35" fill="#94A3B8" font-size="10">Payment &amp; Expense</text>
+
+    <circle cx="930" cy="30" r="8" fill="#F43F5E" />
+    <text x="945" y="35" fill="#94A3B8" font-size="10">ERP S/4HANA &amp; Spend</text>
+
+    <rect x="1100" y="20" width="22" height="20" rx="4" fill="#DC2626" />
+    <text x="1130" y="35" fill="#FEF2F2" font-size="10" font-weight="700">Critical Data Leakage Point (DLP-1 to 7)</text>
+
+    <text x="1560" y="35" fill="#64748B" font-size="10" font-weight="500">ISO 9001 / EFPIA / US Sunshine Act Audit Architecture</text>
+  </g>
+</svg>
